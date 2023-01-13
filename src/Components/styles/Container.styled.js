@@ -19,3 +19,8 @@ export const Input = styled.input`
   border-radius: 3px;
   display: block    ;
 `
+
+
+export const Title = styled.h1`
+  
+`

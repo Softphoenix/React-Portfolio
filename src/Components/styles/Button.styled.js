@@ -20,6 +20,8 @@ export const Button = styled.button`
       color: black;
   }
 `
+
+// INHERITANCE 
 export const TomatoButton = styled(Button)`
   background: green;
   color: #fff;

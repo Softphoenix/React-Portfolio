@@ -10,7 +10,7 @@ import React from "react"
 // const NumberList = numbers.map((number) => <li>{numbers}</li>)
 // const number = [2, 3, 4, 5, 6, 7]
 
-export const numbers = (props) => {
+export const Numbers = (props) => {
     const numb = props.numb
     const numberlist = numb.map((number) =>  <li>{number}</li> )
     return(
@@ -18,15 +18,20 @@ export const numbers = (props) => {
         <h>Number list</h>
         <ul>{numberlist}</ul>
     </> 
-    )
+    );
 }
+
+
+
+
 
 
 const Components = () => {
     return(
        <>
-       {numbers}
+       {Number}
+       {Numbers} 
        </>
-    )
+    );
 }
 export default Components

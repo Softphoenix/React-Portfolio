@@ -2,10 +2,13 @@ import { Container } from "./Components/styles/Container.styled";
 import Header from "./Components/styles/Header";
 import { ThemeProvider } from "styled-components";
 import { Button, TomatoButton } from "./Components/styles/Button.styled";
-import { FaHome, FaPodcast, FaTty  } from "react-icons/fa"
-import { FcAbout  } from "react-icons/fc"
-import { Input } from "./Components/styles/Container.styled";
-import { IconContext } from "react-icons";
+// import { FaHome, FaPodcast, FaTty  } from "react-icons/fa"
+// import { FcAbout  } from "react-icons/fc"
+// import { Input } from "./Components/styles/Container.styled";
+// import { IconContext } from "react-icons";
+import   Numbers  from "./Components/Map_list_keys";
+import Components  from "./Components/Map_list_keys";
+import Greeting, { LoginButton, LoginControl, LogoutButton, Mailbox } from "./Components/Conditional_Rendenring/Greeting";
 
 const theme = {
   colors:{
@@ -16,18 +19,24 @@ const theme = {
   }
 }
 
+const messages = ['React', 'Re: React', 'Re:Re React', 'Redux', 'Javascript'];
 
 function App() {
   return (
+    
   <ThemeProvider theme={theme}>
     <>
+    <LoginButton/>
+    <LogoutButton/>
+    <Numbers/>
+    
     <Header />
-      <IconContext.Provider value={{color: 'green', size: '3rem'}}>
+      {/* <IconContext.Provider value={{color: 'green', size: '3rem'}}>
       <h2><FaHome /> Home</h2>
       <h2><FaPodcast /> Blog</h2>
       <h2><FcAbout/> About</h2>
       <h2><FaTty color="purple"/> Contact</h2>
-      </IconContext.Provider>
+      </IconContext.Provider> */}
     <Container>
       <h2>Hello World</h2>
     </Container>
@@ -46,11 +55,18 @@ function App() {
     This example shows how all props of the Input component are passed on to the DOM node that is mounted, as with React elements.
     
     Note how the inputColor prop is not passed to the DOM, but type and defaultValue are. That is styled-components being smart enough to filter non-standard attributes automatically for you. */}
-    <Input defaultValue="FirstName" type= "text" />
+    {/* <Input defaultValue="FirstName" type= "text" />
     <Input defaultValue="LastName" type= "text" inputColor="purple"/>
-    <Input type= "Date"/>
+    <Input type= "Date"/> */}
+    {/* <Number/> */}
+    {/* <Numbers/> */}
+    <Components/>
+    <Greeting isloggedIn= {true}/>
+    <LoginControl/>
+    <Mailbox unreadMessages={messages}/>
     </>
   </ThemeProvider>
+  
   );
 }
 
